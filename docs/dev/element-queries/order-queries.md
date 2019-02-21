@@ -523,16 +523,16 @@ Narrows the query results to only orders that are completed.
 
 ::: code
 ```twig
-{# Fetch completed orders #}
+{# Fetch completed orders expects true/false param #}
 {% set orders = {twig-function}
-    .isCompleted()
+    .isCompleted(true)
     .all() %}
 ```
 
 ```php
 // Fetch completed orders
 $orders = \craft\commerce\elements\Order::find()
-    ->isCompleted()
+    ->isCompleted(true)
     ->all();
 ```
 :::
@@ -546,9 +546,9 @@ Narrows the query results to only orders that are paid.
 
 ::: code
 ```twig
-{# Fetch paid orders #}
+{# Fetch paid orders expects true/false param #}
 {% set orders = {twig-function}
-    .isPaid()
+    .isPaid(true)
     .all() %}
 ```
 
